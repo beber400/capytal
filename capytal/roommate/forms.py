@@ -19,9 +19,9 @@ class UserCreateForm(auth_UserCreationForm):
 
     Note that only the creation of an instance is garanteed.
     """
-    first_name = forms.CharField(max_length=30, label=u"Prénom")
-    last_name = forms.CharField(max_length=30, label=u"Nom")
-    email = forms.EmailField(label=u"Adresse mail")
+    first_name = forms.CharField(max_length=30, label=u"", widget=forms.TextInput(attrs={'placeholder': 'Prénom'}))
+    last_name = forms.CharField(max_length=30, label=u"", widget=forms.TextInput(attrs={'placeholder': 'Nom'}))
+    email = forms.EmailField(label=u"", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
 
     def save(self, commit=True, *args, **kwargs):
         user = super(UserCreateForm, self).save(commit=False)

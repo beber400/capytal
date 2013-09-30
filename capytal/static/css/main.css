@@ -6,7 +6,7 @@ html, body{
     -moz-user-select: none;
     -o-user-select:none;
     user-select:none;
-    background-color: whiteSmoke;
+    background-color: white;
     font-family: arial;
 }
 
@@ -14,7 +14,7 @@ html, body{
 
 .tabs{
     position: absolute;
-    background-color: gray;
+    background-color: whiteSmoke;
     height: 100%;
     width: 15%;
 }
@@ -30,40 +30,40 @@ html, body{
 }
 
 .tabs span:nth-child(1){
-    border-left-color: limegreen;
+    border-left-color: gold;
 }
 
-.tabs span:nth-child(1):hover{
-    background-color: limegreen;
+.tabs span:nth-child(1):hover, .tabs .actived:nth-child(1){
+    background-color: gold;
 }
 
 .tabs span:nth-child(2){
-    border-left-color: red;
+    border-left-color: DarkTurquoise;
 }
 
-.tabs span:nth-child(2):hover{
-    background-color: red;
+.tabs span:nth-child(2):hover, .tabs .actived:nth-child(2){
+    background-color: DarkTurquoise;
 }
 
 .tabs span:nth-child(3){
-    border-left-color: orange;
+    border-left-color: coral;
 }
 
-.tabs span:nth-child(3):hover{
-    background-color: orange;
+.tabs span:nth-child(3):hover, .tabs .actived:nth-child(3){
+    background-color: coral;
 }
 
 .tabs span:nth-child(4){
-    border-left-color: yellow;
+    border-left-color: MediumSeaGreen;
 }
 
-.tabs span:nth-child(4):hover{
-    background-color: yellow;
+.tabs span:nth-child(4):hover, .tabs .actived:nth-child(4){
+    background-color: MediumSeaGreen;
 }
 
 .tabs span a{
     text-decoration: none;
-    color: lightgray;
+    color: Dimgray;
     font-size: 1.6rem;
 }
 
@@ -75,9 +75,9 @@ html, body{
 /*****************Top Menu**********************/
 
 .top{
-    background-color: black;
+    background-color: Teal;
     width: 100%;
-    height: 7rem;
+    height: 5rem;
 }
 
 .top .logo{
@@ -86,12 +86,12 @@ html, body{
     width: 15%;
     margin: 0;
     text-align: center;
-    line-height: 6.5rem;
-    font-size: 5rem;
+    line-height: 115%;
+    font-size: 4rem;
 }
 
 .top .logo a{
-    color:limegreen;
+    color:whiteSmoke;
     text-decoration: none;
 }
 
@@ -101,31 +101,31 @@ html, body{
     color: white;
     padding: 0;
     margin-right: 1.5rem;
+    height: 50%;
 }
 
 .top .sign span{
-    margin-top: 1.5rem;
+    margin-top: 4.5%;
     margin-left: 1rem;
-    height: 4rem;
     display: inline-block;
-    background-color: gray;
+    background-color: whiteSmoke;
     text-align: center;
     word-wrap: break-word;
-    line-height: 3.9rem;
+    line-height: 200%;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 .top .sign span:hover{
-    background-color: limegreen;
+    background-color: DarkSlateGray;
 }
 
 .top .sign a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 .top .sign span:hover a{
-    color: black;
+    color: white;
 }
 
 /***********************************************/
@@ -135,27 +135,29 @@ html, body{
     width: -moz-calc(85% - 4rem);
     margin: auto;
     margin-top: 2rem;
-    margin-left: -moz-calc(15% + 2rem);
+    margin-left: -moz-calc(15%);
     height: 300px;
 }
 
 .content{
-    background-color: lightgray;
-    border: 0.3rem solid black;
+    margin-left: 2rem;
 }
 
 .tab_actions{
-    height: 3rem;
-    text-align: center;
-    line-height: 2.9rem;
-    width: 20rem;
-    background-color: gray;
+    position: absolute;
+    height: 5rem;
+    line-height: 4.8rem;
+    width: -moz-calc(69%);
+    min-width: 40rem;
+    top:0;
+    margin-left: 0;
 }
 
 .tab_actions span{
     display: inline-block;
+    text-align: center;
     height: 100%;
-    width: 32%;
+    width: 7rem;
 }
 
 .tab_actions span a{
@@ -164,7 +166,7 @@ html, body{
 }
 
 .tab_actions span:hover{
-    background-color: limegreen;
+    background-color: DarkSlateGray;
 }
 
 .tab_actions span:hover a{
@@ -172,25 +174,91 @@ html, body{
 }
 
 /***********************************************/
-/**************Introduction*********************/
-.introduction{
-    background-color: red;
-    height: 50%;
-    width: 65%;
-    display: inline-block;
-    margin: 3rem;
-}
+/******************Login************************/
 
 .sign_in_introduction{
-    background-color: lightgray;
-    margin: 3rem;
-    height: 50%;
-    width: 25%;
-    display: inline-block;
+    background-color: gainsboro;
+    margin: auto;
+    width: 40rem;
+    text-align: center;
 }
 
+.sign_in_introduction h2{
+    width: 40rem;
+    background-color: silver;
+    padding: 1rem;
+    color: teal;
+}
 
+.sign_in_introduction input{
+    width: 90%;
+    border: none;
+    padding:1rem;
+}
 
+.sign_in_introduction input[type="submit"]{
+    background-color: teal;
+    color: white;
+    width: 13rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    margin-left: 9.2rem;
+    text-decoration: none;
+}
+
+.sign_in_introduction input[type="submit"]:hover{
+    background-color: DarkSlateGray;
+    color: white;
+}
+
+.sign_in_introduction .error{
+    margin-top: 1rem;
+    background-color: red;
+    color: white;
+    padding:1rem;
+    text-decoration: none;
+}
+
+/***********************************************/
+/**************General**************************/
+
+.sign_up{
+    background-color: lightgray;
+    margin:auto;
+    margin-top: 2rem;
+    width: 60rem;
+    text-align: center;
+}
+
+.sign_up form{
+    padding: 1rem;
+}
+
+.sign_up input{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    margin: auto;
+}
+
+.sign_up input[type="submit"]{
+    width: 20rem;
+    border: none;
+    background-color: gray;
+    margin: auto;
+    color:white;
+}
+
+.sign_up input[type="submit"]:hover{
+    background-color: limegreen;
+    color: black;
+}
+.sign_up h2{
+    width: 60rem;
+    background-color: gray;
+    padding: 1rem;
+    color: limegreen;
+}
 
 
 

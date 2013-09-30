@@ -6,7 +6,7 @@
         <form method="post" action="{% url 'user_login' %}">
             {% csrf_token %}
                 {{ form.as_p }}
-                <a href="#">Mot de passe oublié?</a><input type="submit" value="SE CONNECTER"/>
+                <input type="submit" value="SE CONNECTER"/><a href="#">Mot de passe oublié?<a>
             {% if next %}
                 <input type="hidden" name="next" value="{{ next }}"/>
             {% else %}

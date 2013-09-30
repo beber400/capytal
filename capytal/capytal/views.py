@@ -11,7 +11,6 @@ def homepage(request, *args, **kwargs):
     """Display the website homepage"""
     return render_to_response('base.html', RequestContext(request))
 
-
 def user_login(request, *args, **kwargs):
     """Log the user in"""
     return login(request, template_name='login.html', *args, **kwargs)

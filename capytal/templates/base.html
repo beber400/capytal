@@ -27,6 +27,8 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+
+
         <div class="top">
             <div class="logo"><a href="./../">Capytal</a></div>
             <div class="sign">
@@ -34,16 +36,18 @@
                         {% if user.is_authenticated %}
                         <label>{{user.username}}</label><span><a href="{% url 'user_logout' %}">SE DECONNECTER</a></span>
                         {% else %}
-                        <span><a href="{% url 'user_login' %}">SE CONNECTER</a></span>
-                        <span><a href="{% url 'roommate_create' %}">S'INSCRIRE</a></span>
+                        <span><a href="{% url 'roommate_create' %}">CREER UN COMPTE</a></span>
                         {% endif %}
                 {% endblock user %}
             </div>
         </div>
+
+
+
         {% block content %}
             {% if user.is_authenticated %}
         <nav class="tabs">
-            <span><a href="#">TABLEAU DE BORD</a></span>
+            <span class="actived"><a href="#">TABLEAU DE BORD</a></span>
             <span><a href="#">MON COMPTE PERSONNEL</a></span>
             <span><a href="#">COMPTES PARTAGE</a></span>
             <span><a href="#">OPTIONS</a></span>
@@ -51,35 +55,16 @@
 
         <div class="content_body">
             <nav class="tab_actions">
-                <span><a href="#">+</a></span>
-                <span><a href="#">action2</a></span>
-                <span><a href="#">action3</a></span>
+                <span><a href="#">Ajouter</a></span>
+                <span><a href="#">Action2</a></span>
+                <span><a href="#">Action3</a></span>
             </nav>
             <div class="content">
                 Page de presentation de Capytal
             </div>
         </div>
         {% else %}
-        <div class="introduction">
-            What is Capytal ?
-        </div>
-        <div class="sign_in_introduction">
-            {% if form.errors %}
-                <p>Erreur: votre login et mot de passe ne correspondent pas.</p>
-            {% endif %}
-
-            <form method="post" action="{% url 'user_login' %}">
-                {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Se connecter"/><a href="#">Mot de passe oublié?<a>
-                {% if next %}
-                    <input type="hidden" name="next" value="{{ next }}"/>
-                {% else %}
-                    <input type="hidden" name="next" value="{% url 'homepage' %}"/>
-                {% endif %}
-            </form>
-        </div>
-
+            <meta http-equiv="REFRESH" content="0;url=/login">
         {% endif %}
         {% endblock content %}
 
