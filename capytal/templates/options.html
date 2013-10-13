@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="sign_in_introduction">
-        <h2>Connexion</h2>
-        <form method="post" action="{% url 'user_login' %}">
-            {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="SE CONNECTER"/><a href="#">Mot de passe oublié?<a>
-            {% if next %}
-                <input type="hidden" name="next" value="{{ next }}"/>
-            {% else %}
-                <input type="hidden" name="next" value="{% url 'homepage' %}"/>
-            {% endif %}
-        </form>
-        {% if form.errors %}
-        <p class="error">Erreur: votre login et mot de passe ne correspondent pas!</p>
-        {% endif %}
+        <nav class="tabs">
+            <span><a href="{% url 'homepage' %}">TABLEAU DE BORD</a></span>
+            <span><a href="#">MON COMPTE PERSONNEL</a></span>
+            <span><a href="#">COMPTES PARTAGE</a></span>
+            <span class="actived"><a href="#">OPTIONS</a></span>
+        </nav>
+
+        <div class="content_body">
+            <nav class="tab_actions">
+                <span><a href="#">Ajouter</a></span>
+                <span><a href="#">Action2</a></span>
+                <span><a href="#">Action3</a></span>
+            </nav>
+            <div class="content">
+                Page des Options
+            </div>
+        </div>
 {% endblock content %}

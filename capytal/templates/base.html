@@ -47,10 +47,10 @@
         {% block content %}
             {% if user.is_authenticated %}
         <nav class="tabs">
-            <span class="actived"><a href="#">TABLEAU DE BORD</a></span>
+            <span class="actived"><a href="{% url 'homepage' %}">TABLEAU DE BORD</a></span>
             <span><a href="#">MON COMPTE PERSONNEL</a></span>
             <span><a href="#">COMPTES PARTAGE</a></span>
-            <span><a href="#">OPTIONS</a></span>
+            <span><a href="{% url 'user_options' %}">OPTIONS</a></span>
         </nav>
 
         <div class="content_body">
@@ -60,7 +60,7 @@
                 <span><a href="#">Action3</a></span>
             </nav>
             <div class="content">
-                Page de presentation de Capytal
+                Tableau de Bord
             </div>
         </div>
         {% else %}

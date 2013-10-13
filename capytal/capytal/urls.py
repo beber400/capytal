@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^$', 'capytal.views.homepage', name='homepage'),
     url(r'^login/', 'capytal.views.user_login', name='user_login'),
     url(r'^logout/', 'capytal.views.user_logout', name='user_logout'),
+    url(r'^options/', 'capytal.views.user_options', name='user_options'),
     url(r'^expense/', include('expense.urls')),
     url(r'^roommate/', include('roommate.urls')),
 )
